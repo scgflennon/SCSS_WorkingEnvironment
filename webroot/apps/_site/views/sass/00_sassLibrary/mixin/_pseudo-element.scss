@@ -1,0 +1,49 @@
+/*
+
+疑似要素
+吹き出しデザインの一部を表現したり、リスト・ボタンといった要素にアイコンを付けたいときなど、
+何かと使う場面が多い疑似要素を使用する際によく記述するプロパティをまとめたものです。
+
+サンプルの::after擬似要素のように使用することでcontentの値を変更して出力でき、
+第2・第3引数を変更すればposition: relative;にしたりdisplay: inline-block;にしたりといった使い方もできます。
+
+usage
+CSS
+.elements {
+	&::before {
+		@include pseudo-element;
+	}
+
+	&::after {
+		@include pseudo-element('foo');
+	}
+}
+
+output
+CSS
+.elements::before {
+	position: absolute;
+	display: block;
+	content: "";
+}
+
+.elements::after {
+	position: absolute;
+	display: block;
+	content: "foo";
+}
+
+*/
+
+@mixin pseudo-element($content: '', $position: absolute, $display: block) {
+	position: $position;
+	display: $display;
+	content: $content;
+}
+
+%bfaf{
+	@include pseudo-element;
+}
+@mixin bfaf{
+	@include pseudo-element;
+}

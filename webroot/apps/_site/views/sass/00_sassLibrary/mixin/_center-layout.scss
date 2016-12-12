@@ -1,0 +1,32 @@
+/*
+
+■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□
+レイアウト周りでよく使うセンター配置
+■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□■□
+
+引数にwidthの値を指定したりmax-widthの有無を指定できるようになっています。
+
+サンプルの.elements01は単純にwidthで指定したい値を引数に記述したもので、
+elements02は同じくwidthの値を指定するのに加え、第2引数でmax-widthを利用するようtrueを記述しています。
+
+
+.elements01 {
+	@include center-layout(960px);
+}
+
+.elements02 {
+	@include center-layout(1200px, true);
+}
+
+*/
+
+@mixin center-layout($width, $max: false) {
+	display: block;
+	@if $max {
+		max-width: $width;
+	} @else {
+		width: $width;
+	}
+	margin-right: auto;
+	margin-left: auto;
+}

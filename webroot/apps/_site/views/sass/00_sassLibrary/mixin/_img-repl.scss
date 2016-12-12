@@ -1,0 +1,37 @@
+/*
+
+画像置換
+CSSで画像置換を実装するテクニックは幾つかありますが、その中のひとつを簡単に扱えるようにしたもので、
+使用時は引数に表示させる画像のパスやサイズを指定します。
+
+usage
+CSS
+.elements {
+	@include img-repl(200px, 100px, '../example.jpg');
+}
+
+output
+CSS
+.elements {
+	width: 200px;
+	height: 100px;
+	background: url("../example.jpg") 0 0 no-repeat;
+	font-size: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+
+*/
+
+
+@mixin img-repl($width, $height, $image) {
+	width: $width;
+	height: $height;
+	background: url($image) 0 0 no-repeat;
+	font-size: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}

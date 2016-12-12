@@ -1,0 +1,27 @@
+/*
+
+天地中央配置
+要素を天地中央に配置させるスニペットのひとつを簡単に扱えるようにします。
+
+usage
+CSS
+.elements {
+	@include vertical-centering;
+}
+
+output
+CSS
+.elements {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+
+*/
+
+@mixin vertical-centering {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}

@@ -1,0 +1,67 @@
+/*
+
+要素をセンター配置（天地左右中央・天地中央・左右中央で使い分け可能）
+基本的には上で紹介してきたようなposition: absolute;とtransformを組み合わせたセンター配置のスニペットを使用するmixinですが、
+引数の指定によって天地左右中央だけでなく天地中央・左右中央にして使うということができるものです。
+
+引数の初期値は両方trueにしているので、そのまま使用した場合は天地左右中央となり、
+片方だけfalseにすることで天地中央または左右中央として実装できます。
+それを踏まえてサンプルはそれぞれ以下のような動きが実装される記述となっています。
+
+.elements01 … 天地左右中央
+.elements02 … 天地中央
+.elements03 … 左右中央
+
+usage
+CSS
+.elements01 {
+	@include centering-elements;
+}
+
+.elements02 {
+	@include centering-elements(true, false);
+}
+
+.elements03 {
+	@include centering-elements(false, true);
+}
+
+
+output
+CSS
+.elements01 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.elements02 {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+.elements03 {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+*/
+
+
+@mixin centering-elements($horizontal: true, $vertical: true) {
+	position: absolute;
+	@if $horizontal and $vertical {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	} @else if $horizontal {
+		left: 50%;
+		transform: translate(-50%, 0);
+	} @else if $vertical {
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+}

@@ -1,0 +1,24 @@
+/*
+#[mixin] z-index
+fileoverview title
+
+fileoverview comment
+http://qiita.com/kojika17/items/b4694e3afe0da97e6335
+*/
+@function z-index($name, $childname: 0) {
+	$getkey: map-get($z-map, $name);
+	$counter: 1;
+	$is-index: 0;
+	@if $childname != 0 {
+		@return index($getkey, $childname);
+	}
+
+	@each $map-key, $map-value in $z-map {
+		@if $map-key == $name {
+			$is-index: $counter;
+		}
+		$counter: $counter + 1;
+	}
+
+	@return $is-index;
+}

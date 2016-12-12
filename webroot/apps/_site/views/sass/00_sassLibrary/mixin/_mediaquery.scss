@@ -1,0 +1,56 @@
+/*
+
+実際にメディアクエリを呼び出す時にはこのようにします。
+Bootstrap準拠な為、モバイルファーストになっている
+
+.foo {
+	color: red;
+	@include media-query(sm) {
+		color: blue;
+	}
+}
+
+http://qiita.com/manabuyasuda/items/caa823d3644cf3672d05
+*/
+
+$breakpoints: (
+	'sm': 'screen and (min-width: 400px)',
+	'md': 'screen and (min-width: 768px)',
+	'lg': 'screen and (min-width: 1000px)',
+	'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+
+@mixin media-query($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media #{inspect(map-get($breakpoints, $breakpoint))} {
+			@content;
+		}
+	} @else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+		+ "Please make sure it is defined in `$breakpoints` map.";
+	}
+}
+
+
+
+/*
+
+Retinaディスプレイを分岐するmixin
+
+// 使い方
+.aaaa {
+	@include media-retina {
+		background-image: url(aaaa@2x.png);
+	}
+}
+
+http://qiita.com/soheikitada/items/bc71997c6f1be6ba9b4d
+
+*/
+
+@mixin media-retina() {
+	@media only screen and (min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+		@content;
+	}
+}

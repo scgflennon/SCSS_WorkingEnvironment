@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+/*************************************************************
+
+ Noto Sans Japanese
+ http://www.google.com/get/noto/#sans-jpan
+
+*************************************************************/
+
+$WebFontNotoSans: 'Noto Sans Japanese';
+//$WebFontNotoSansURL : '//fonts.gstatic.com/ea/notosansjapanese/v6/';
+$WebFontNotoSansURL : '../../../fonts/notosans/';
+$WebFontNotoSansName : 'NotoSansJP-';
+
+@font-face {
+	font-family: $WebFontNotoSans;
+	font-style: normal;
+	font-weight: 100;
+	src: local('#{$WebFontNotoSansName}Thin.otf'),
+			 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Thin.woff2) format('woff2'),
+			 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Thin.woff) format('woff'),
+			 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Thin.otf) format('opentype');
+}
+
+@font-face {
+	font-family: $WebFontNotoSans;
+	font-style: normal;
+	font-weight: 200;
+	src: local('#{$WebFontNotoSansName}Light.otf'),
+			 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Light.woff2) format('woff2'),
+			 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Light.woff) format('woff'),
+			 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Light.otf) format('opentype');
+}
+
+@font-face {
+	font-family: $WebFontNotoSans;
+	font-style: normal;
+	font-weight: 300;
+		src: local('#{$WebFontNotoSansName}DemiLight.otf'),
+				 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}DemiLight.woff2) format('woff2'),
+				 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}DemiLight.woff) format('woff'),
+				 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}DemiLight.otf) format('opentype');
+}
+
+@font-face {
+	font-family: $WebFontNotoSans;
+	font-style: normal;
+	font-weight: 400;
+		src: local('#{$WebFontNotoSansName}Regular.otf'),
+				 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Regular.woff2) format('woff2'),
+				 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Regular.woff) format('woff'),
+				 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Regular.otf) format('opentype');
+}
+
+@font-face {
+	font-family: $WebFontNotoSans;
+	font-style: normal;
+	font-weight: 500;
+		src: local('#{$WebFontNotoSansName}Medium.otf'),
+				 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Medium.woff2) format('woff2'),
+				 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Medium.woff) format('woff'),
+				 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Medium.otf) format('opentype');
+}
+
+@font-face {
+	font-family: $WebFontNotoSans;
+	font-style: normal;
+	font-weight: 700;
+		src: local('#{$WebFontNotoSansName}Bold.otf'),
+				 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Bold.woff2) format('woff2'),
+				 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Bold.woff) format('woff'),
+				 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Bold.otf) format('opentype');
+}
+
+@font-face {
+	font-family: $WebFontNotoSans;
+	font-style: normal;
+	font-weight: 900;
+	src: local('#{$WebFontNotoSansName}Black.otf'),
+			 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Black.woff2) format('woff2'),
+			 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Black.woff) format('woff'),
+			 url(#{$WebFontNotoSansURL}#{$WebFontNotoSansName}Black.otf) format('opentype');
+}

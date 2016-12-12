@@ -1,0 +1,27 @@
+/*
+
+テキストを省略
+テキストが領域をはみ出した場合に末尾に三点リーダー（…）が表示され、
+それ以降テキストが省略されるスニペットを簡単に扱えるようにします。
+
+usage
+CSS
+.elements {
+	@include text-truncate;
+}
+
+output
+CSS
+.elements {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+*/
+
+@mixin text-truncate {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}

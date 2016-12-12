@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+//@import "../base/_normalize.scss";
+@import "../vendor/bootstrap/_bootstrap.scss";
+
+@import "../mixin/_font-family.scss";
+@import "../mixin/_font-size.scss";
+@import "../mixin/_z-index.scss";
+@import "../mixin/_mediaquery.scss";
+@import "../mixin/_center-layout.scss";
+@import "../mixin/_vertical-centering.scss";
+@import "../mixin/_centering-elements.scss";
+@import "../mixin/_pseudo-element.scss";
+@import "../mixin/_img-repl.scss";
+@import "../mixin/_text-truncate.scss";
+
+
+@import "../vendor/fontAwesome/_font-awesome.scss";
+@import "../fonts/_font-family-NotoSans.scss";
+
+body {
+	font-family: 'Noto Sans Japanese', "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	font-weight: 400;
+	font-variant: normal;
+	font-style: normal;
+	font-size: medium;
+	line-height: 1.4446;
+	letter-spacing: 0.05em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings : 'palt';
+}
+
+.safari { font-feature-settings : 'pkna';}
+
+h1, h2, h3, h4, h5, h6, address, table th, dl > dt, em, strong, cite {
+	font-family: 'Noto Sans Japanese', "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	font-weight: 400;
+	font-variant: inherit;
+	font-style: inherit;
+	font-size: inherit;
+}

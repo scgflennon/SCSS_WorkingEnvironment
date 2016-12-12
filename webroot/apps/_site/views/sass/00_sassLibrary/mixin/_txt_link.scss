@@ -1,0 +1,42 @@
+// **********************************************
+//	テキストリンクのスタイル
+//	@include txt_link(linkLine); //常に下線あり
+//	@include txt_link(hoverLine); //hover時に下線あり
+//	@include txt_link(noLine); //常に下線なし
+// **********************************************
+@mixin txt_link($style){
+	color: $link_color;
+	&:link{
+		color: $link;
+	}
+	&:visited{
+		color: $visited;
+	}
+	&:hover{
+		color: $hover;
+	}
+	&:active{
+		color: $active;
+	}
+
+	@if $style == linkLine{
+		text-decoration: underline;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+	@else if $style == hoverLine{
+		text-decoration: none;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+	@else if $style == noLine{
+		text-decoration: none;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}

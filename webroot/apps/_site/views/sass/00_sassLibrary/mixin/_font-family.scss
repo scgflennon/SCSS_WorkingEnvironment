@@ -1,0 +1,37 @@
+/*
+
+
+@include font-face('<フォント名>', '＜フォントファイルまでのパス＞', <ウェイト>, <スタイル>, <タイプ>);
+
+例
+@include font-face('TeX Gyre Adventor', '../../fonts/texgyreadventor-regular', null, null, ttf);
+@include font-face('TeX Gyre Adventor', '../../fonts/texgyreadventor-bold', bold, null, ttf);
+@include font-face('Freestyle Script Std', '../../fonts/FreestyleScriptStd', null, null, ttf otf);
+
+ウェイトとスタイルは何も指定がない場合nullを入れてあげましょう。フォントタイプは複数指定可能です。
+複数タイプ指定する場合には"ttf otf"のようにスペースを空けてつなげてあげてください。
+
+*/
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: otf ttf woff woff2) {
+	$src: null;
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype",
+		woff: "woff",
+		woff2: "woff2"
+	);
+
+	@each $ext in $exts {
+		$format: map-get($formats, $ext);
+		$src: append($src, url(quote($path)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style:  $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
